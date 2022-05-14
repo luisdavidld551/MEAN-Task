@@ -1,0 +1,15 @@
+<div>
+    <h1 mat-dialog-title>Role</h1>
+    <div mat-dialog-content>
+        <div class="dialogModal">
+            <p>{{data.name}}</p>
+            <mat-form-field>
+                <input matInput [(ngModel)]="data.description" type="text" placeholder="Description" />
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancel</button>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+    </div>
+</div>

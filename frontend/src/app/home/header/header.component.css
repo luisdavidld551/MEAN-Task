@@ -1,0 +1,42 @@
+.fas {
+  color: white;
+  font-size: 45px;
+}
+.avatar{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.navbar {
+  font-size: 25px;
+}
+
+li:hover > ul {
+  display: block;
+}
+
+li:hover > hr {
+  display: block;
+}
+
+div .showUser:hover > ul {
+  display: block;
+}
+
+.dropdownUser > ul {
+  inset: 0px 0px auto auto;
+  margin: 0px;
+  transform: translate(-60px, 0px);
+}
+
+.noneTask {
+  display: none;
+}
+
+@media (max-width: 765px)  {
+
+  li{
+    width: 280px;
+  }
+
+}

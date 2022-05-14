@@ -1,0 +1,5 @@
+@media (max-width: 550px){
+    .mat-paginator {
+      min-width: 531.625px;
+    }
+  }

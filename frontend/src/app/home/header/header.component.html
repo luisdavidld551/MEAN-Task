@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-black" aria-label="Fourth navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand"><i class="far fa-bookmark fa-lg"></i> &nbsp;Agenda</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04"
+      aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04" >
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li *ngIf="_userService.loggedIn()" class="nav-item">
+          <a routerLink="listTask" class="text-white" aria-expanded="false">Listar Task</a>
+        </li>&nbsp;
+        <li *ngIf="_userService.loggedIn()" class="nav-item">
+          <a routerLink="saveTask" class="text-white">Crear Task</a>
+        </li>&nbsp;
+        <li *ngIf="_userService.loggedIn() && _userService.isAdmin()" class=" dropend">
+          <a class="dropdown-toggle text-white" id="dropdownAdmin" data-bs-toggle="dropdown">Admin</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownAdmin">
+            <li><a class="dropdown-item" routerLink="listUser">User</a></li>
+            <li><a class="dropdown-item" routerLink="listRole">Role</a></li>
+            <li>
+              <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Task</a>
+              <hr class="dropdown-divider noneTask">
+              <ul class="noneTask">
+                <li><a class="dropdown-item" routerLink="listTaskAdmin">Listar Task Admin</a></li>
+                <li><a class="dropdown-item" routerLink="saveTaskAdmin">Crear Task Admin</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="text-end algo">
+        <a *ngIf="!_userService.loggedIn()" routerLink="login" class="btn btn-outline-success">
+          Login </a>
+        &nbsp;
+        <a *ngIf="!_userService.loggedIn()" routerLink="signUp" class="btn btn-outline-warning">
+          Sign-up </a>
+        &nbsp;
+        <div class="btn-group">
+          <div class="dropdown showUser dropdownUser" *ngIf="_userService.loggedIn()">
+            <a class="dropdown-toggle text-white" id="dropdownUser1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <i *ngIf="_userService.loggedIn() && !_userService.getImg()" class="fas fa-user-circle"></i>
+              <img *ngIf="_userService.loggedIn() && _userService.getImg()" class="avatar"
+              src="{{_userService.getImg()}}"  alt="Change your avatar"/>
+            </a>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item" routerLink="profile">Profile</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <a *ngIf="_userService.loggedIn()" (click)="_userService.logout()" class="dropdown-item">
+                  logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

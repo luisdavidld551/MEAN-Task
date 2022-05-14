@@ -1,0 +1,20 @@
+ExpressJS
+    npm init
+        description: Developed in NodeJS, ExpressJS and MongoDB
+        @luisdavidld551
+    npm i express //servidor
+    npm i mongoose //DB
+    npm i cors // peticiones cors
+    npm i dotenv //.env o variables de entorno
+    npm i jsonwebtoken //jsw
+    npm i bcrypt // encriptar
+    npm i moment // manipulacion de fecha
+    npm i connect-multiparty
+    npm i nodemon -D
+
+    npm start
+
+MongoDB = mongodb://127.0.0.1:27017/
+    servidor en el cmd es Mongod
+    la consola en el cmd mongo
+    show dbs

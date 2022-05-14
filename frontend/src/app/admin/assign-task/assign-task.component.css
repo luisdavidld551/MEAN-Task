@@ -1,0 +1,17 @@
+.selectUser h2{
+    margin: 0;
+}
+
+.containerTask{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px 0px;
+}
+
+table{
+    margin:0 !important;
+}
+
+.containerTask h1{
+    padding-bottom: 50px;
+}

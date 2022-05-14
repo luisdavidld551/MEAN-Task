@@ -1,0 +1,35 @@
+<div>
+    <h1 mat-dialog-title>User</h1>
+    <div mat-dialog-content>
+        <div class="dialogModal">
+            <mat-form-field>
+                <input matInput [(ngModel)]="data.name" type="text" placeholder="Name" />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="data.phone" autocomplete="off" type="number" placeholder="Phone" />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="data.email" autocomplete="off" type="email" placeholder="Email" />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="data.password" type="password" placeholder="Password" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Choose user role</mat-label>
+                <mat-select [(ngModel)]="data.role">
+                  <mat-option *ngFor="let role of roles" [value]="role._id">{{
+                    role.name
+                    }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancel</button>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+    </div>
+</div>

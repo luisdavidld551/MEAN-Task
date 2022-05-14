@@ -1,0 +1,12 @@
+
+@media (max-width: 576px){
+    .mat-paginator {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 8px;
+      flex-wrap: wrap-reverse;
+      min-width: 323.344px;
+      width: 100%;
+    }
+  }
